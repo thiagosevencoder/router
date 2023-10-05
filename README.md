@@ -4,7 +4,7 @@ para fazer funcionar no apache siga os seguintes passos
 
 1º Rode o comando : sudo a2enmod rewrite \
 2º Para surtir efeito restart o apache2 com o comando : sudo systemctl restart apache2 \
-3º configure um arquivos .htaccess em uma pasta aonde faça efeito nos arquivos de interesse, conteudo do .htaccess : \s
+3º configure um arquivos .htaccess em uma pasta aonde faça efeito nos arquivos de interesse, conteudo do .htaccess : \
 RewriteEngine On
 RewriteBase /
 
