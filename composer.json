@@ -1,0 +1,19 @@
+{
+  "name": "sevencoder/router",
+  "description": "Lib Router",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Thiago Cavalcante",
+      "email": "thiagocode2023@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "SevenCoder\\Router\\": "src"
+    }
+  }
+}
