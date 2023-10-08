@@ -13,7 +13,6 @@ class Dispatch
     private string $projectUrl;
     protected string $separator;
     protected string $prefix = '';
-    protected ?array $data = [];
     protected ?string $patch;
     protected string $httpMethod;
     private ?array $route;
@@ -68,36 +67,5 @@ class Dispatch
         }
 
         return false;
-    }
-
-    protected function formSpoofing(): void
-    {
-        $post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-        if (!empty($post['_method']) && in_array($post['_method'], ["PUT", "PATCH", "DELETE"])) {
-            $this->httpMethod = $post['_method'];
-            $this->data = $post;
-
-            unset($this->data["_method"]);
-            return;
-        }
-
-        if ($this->httpMethod == "POST") {
-            $this->data = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-            unset($this->data["_method"]);
-            return;
-        }
-
-        if (in_array($this->httpMethod, ["PUT", "PATCH", "DELETE"]) && !empty($_SERVER['CONTENT_LENGTH'])) {
-            parse_str(file_get_contents('php://input', false, null, 0, $_SERVER['CONTENT_LENGTH']), $putPatch);
-            $this->data = $putPatch;
-
-            unset($this->data["_method"]);
-            return;
-        }
-
-        $this->data = [];
-        return;
     }
 }

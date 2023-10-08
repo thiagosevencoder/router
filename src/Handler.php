@@ -12,19 +12,11 @@ trait Handler
             $this->routes[] = '';
         }
 
-        preg_match_all("~\{\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \}~x", $route, $keys, PREG_SET_ORDER);
-        $routeDiff = array_values(array_diff(explode("/", $this->patch), explode("/", $route)));
-
-        $this->formSpoofing();
-        $offset = ($this->prefix ? 1 : 0);
-        foreach ($keys as $key) {
-            $this->data[$key[1]] = ($routeDiff[$offset++] ?? null);
-        }
-
-        $route = (!$this->prefix ? $route : "{$this->prefix}"."/"."{$route}");
-        $data = $this->data;
+        $processData = new ProcessData($route, $this->httpMethod, $this->patch, $this->prefix);
+        $data = $processData->requestProcessData();
         $controller = $this->getController($handler);
         $action = $this->getAction($handler);
+        $route = (!$this->prefix ? $route : "{$this->prefix}"."/"."{$route}");
 
         $router = function () use ($method, $controller, $action, $data, $route, $name) {
             return [
