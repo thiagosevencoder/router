@@ -1,0 +1,7 @@
+App
+vendor
+composer.lock
+.idea
+.htaccess
+index.php
+test

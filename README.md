@@ -6,11 +6,12 @@ para fazer funcionar no apache siga os seguintes passos
 2º Para surtir efeito restart o apache2 com o comando : sudo systemctl restart apache2 \
 3º configure um arquivos .htaccess em uma pasta aonde faça efeito nos arquivos de interesse, conteudo do .htaccess : \
 RewriteEngine On
-RewriteBase /
+Options All -Indexes
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
 
 
 
