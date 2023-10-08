@@ -36,4 +36,3 @@
     Examples : In the library's installation folder, there are examples of .htaccess, controller, 
     json of postman test examples, and an index file that will receive HTTP requests first and invoke 
     the resources of the library
-
