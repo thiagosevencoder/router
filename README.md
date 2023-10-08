@@ -26,7 +26,7 @@
             
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteCond %{REQUEST_FILENAME} !-d
-            RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+            RewriteRule ^(.*)$ index.php?route=$1 [L,QSA] 
             
 
         
