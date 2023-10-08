@@ -28,6 +28,100 @@
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteRule ^(.*)$ index.php?route=$1 [L,QSA] 
             
+    5 - Example of file that receive http request, configure router and call dispatch :
+    
+            <?php
+            
+            require 'vendor/autoload.php';
+            
+            use SevenCoder\Router\Router;
+            
+            /* this is the separator of class and method(of class controller) */
+            $separator = '@';
+            
+            /* this is project url, you can define it here or get it from elsewhere */
+            $projectUrl = 'http://localhost/router';
+            
+            $router = new Router($projectUrl, $separator);
+            
+            /* base directory that get controller */
+            $baseDir = __DIR__.'/App/Controller';
+            
+            /* set the base controller */
+            $router->setBasePath($baseDir);
+            
+            $router->get('/', 'HomeController@helloWorld');
+            $router->get('test/{teste}/{teste2}', 'HomeController@testGet');
+            $router->post('test-post', 'HomeController@testPost');
+            $router->put('test-put', 'HomeController@testPut');
+            $router->patch('test-patch', 'HomeController@testPatch');
+            $router->options('test-options', 'HomeController@testOptions');
+            $router->delete('test-delete', 'HomeController@testDelete');
+                        
+            $router->prefix('test-prefix');
+            $router->get('1/{param1}/{param2}', 'HomeController@testGestPrefix');
+            $router->get('2', 'HomeController@testGetPrefix');
+            
+            $router->dispatch();
+            
+     5 - Example Controller :
+            
+            <?php
+                      
+            class HomeController
+            {
+                public function __construct()
+                {
+                    echo "here in construct";
+                }
+            
+                public function helloWorld()
+                {
+                    echo "Hello World";
+                }
+            
+                public function testGet(array $data)
+                {
+                    dump('TestGet');
+                    dump($data);exit;
+                }
+            
+                public function testPost(array $data)
+                {
+                    dump('TestPost');
+                    dump($data);exit;
+                }
+            
+                public function testPut(array $data)
+                {
+                    dump('TestPut');
+                    dump($data);exit;
+                }
+            
+                public function testPatch(array $data)
+                {
+                    dump('TestPatch');
+                    dump($data);exit;
+                }
+            
+                public function testeOptions(array $data)
+                {
+                    dump('TestOptions');
+                    dump($data);exit;
+                }
+            
+                public function testDelete(array $data)
+                {
+                    dump('TestDelete');
+                    dump($data);exit;
+                }
+            
+                public function testGetPrefix(array $data)
+                {
+                    dump('TestGetPrefix');
+                    dump($data);exit;
+                }
+            }
 
         
     Observation : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 

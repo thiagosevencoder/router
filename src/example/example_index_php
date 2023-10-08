@@ -1,16 +1,21 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 require 'vendor/autoload.php';
 
 use SevenCoder\Router\Router;
 
-$router = new Router('http://localhost/router', '@');
+/* this is the separator of class and method(of class controller) */
+$separator = '@';
 
+/* this is project url, you can define it here or get it from elsewhere */
+$projectUrl = 'http://localhost/router';
+
+$router = new Router($projectUrl, $separator);
+
+/* base directory that get controller */
 $baseDir = __DIR__.'/App/Controller';
 
+/* set the base controller */
 $router->setBasePath($baseDir);
 
 $router->get('/', 'HomeController@helloWorld');
@@ -20,7 +25,6 @@ $router->put('test-put', 'HomeController@testPut');
 $router->patch('test-patch', 'HomeController@testPatch');
 $router->options('test-options', 'HomeController@testOptions');
 $router->delete('test-delete', 'HomeController@testDelete');
-
 
 $router->prefix('test-prefix');
 $router->get('1/{param1}/{param2}', 'HomeController@testGestPrefix');
