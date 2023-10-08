@@ -26,14 +26,24 @@ class Router extends Dispatch
         $this->addRoute("PUT", $route, $handler, $name);
     }
 
-    public function prefix(?string $prefix): void
-    {
-        $this->prefix = $prefix;
-    }
-
     public function patch(string $route, $handler, string $name = null): void
     {
         $this->addRoute("PATCH", $route, $handler, $name);
+    }
+
+    public function options(string $route, $handler, string $name = null): void
+    {
+        $this->addRoute("OPTIONS", $route, $handler, $name);
+    }
+
+    public function delete(string $route, $handler, string $name = null): void
+    {
+        $this->addRoute("DELETE", $route, $handler, $name);
+    }
+
+    public function prefix(?string $prefix): void
+    {
+        $this->prefix = $prefix;
     }
 
     public function setBasePath(string $basePath): void

@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "ded18a77-43a1-4f8c-ae80-b69a49485d7a",
+		"name": "sevencoder\\router",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "router GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/router/test/123/123",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test",
+						"123",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-post",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-put",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-patch",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-patch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-delete",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router GET Prefix 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-prefix/1/abc/123",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-prefix",
+						"1",
+						"abc",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router GET Prefix 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-prefix/2",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-prefix",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "router GET Prefix 2 Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index1\" : \"123\",\n    \"index2\" : \"abc\",\n    \"nodes1\" : {\n        \"nodeIndex1\" : 123,\n        \"nodeIndex2\" : 456,\n        \"nodeIndex3\" : 456\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/router/test-prefix/1/abc/123",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"router",
+						"test-prefix",
+						"1",
+						"abc",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

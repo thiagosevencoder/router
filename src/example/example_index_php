@@ -1,0 +1,29 @@
+<?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require 'vendor/autoload.php';
+
+use SevenCoder\Router\Router;
+
+$router = new Router('http://localhost/router', '@');
+
+$baseDir = __DIR__.'/App/Controller';
+
+$router->setBasePath($baseDir);
+
+$router->get('/', 'HomeController@helloWorld');
+$router->get('test/{teste}/{teste2}', 'HomeController@testGet');
+$router->post('test-post', 'HomeController@testPost');
+$router->put('test-put', 'HomeController@testPut');
+$router->patch('test-patch', 'HomeController@testPatch');
+$router->options('test-options', 'HomeController@testOptions');
+$router->delete('test-delete', 'HomeController@testDelete');
+
+
+$router->prefix('test-prefix');
+$router->get('1/{param1}/{param2}', 'HomeController@testGestPrefix');
+$router->get('2', 'HomeController@testGetPrefix');
+
+$router->dispatch();
