@@ -66,7 +66,7 @@
             
      5 - Example Controller :
             
-           `<?php
+           <?php
                       
             class HomeController
             {
@@ -121,8 +121,8 @@
                     dump('TestGetPrefix');
                     dump($data);exit;
                 }
-            } `
-
+            } 
+            
         
     Observation : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 
     be needed for other operating systems or web servers.
