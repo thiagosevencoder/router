@@ -66,62 +66,62 @@
             
      5 - Example Controller :
             
-   `<?php
-              
-    class HomeController
-    {
-        public function __construct()
-        {
-            echo "here in construct";
-        }
-    
-        public function helloWorld()
-        {
-            echo "Hello World";
-        }
-    
-        public function testGet(array $data)
-        {
-            dump('TestGet');
-            dump($data);exit;
-        }
-    
-        public function testPost(array $data)
-        {
-            dump('TestPost');
-            dump($data);exit;
-        }
-    
-        public function testPut(array $data)
-        {
-            dump('TestPut');
-            dump($data);exit;
-        }
-    
-        public function testPatch(array $data)
-        {
-            dump('TestPatch');
-            dump($data);exit;
-        }
-    
-        public function testeOptions(array $data)
-        {
-            dump('TestOptions');
-            dump($data);exit;
-        }
-    
-        public function testDelete(array $data)
-        {
-            dump('TestDelete');
-            dump($data);exit;
-        }
-    
-        public function testGetPrefix(array $data)
-        {
-            dump('TestGetPrefix');
-            dump($data);exit;
-        }
-    } `
+           `<?php
+                      
+            class HomeController
+            {
+                public function __construct()
+                {
+                    echo "here in construct";
+                }
+            
+                public function helloWorld()
+                {
+                    echo "Hello World";
+                }
+            
+                public function testGet(array $data)
+                {
+                    dump('TestGet');
+                    dump($data);exit;
+                }
+            
+                public function testPost(array $data)
+                {
+                    dump('TestPost');
+                    dump($data);exit;
+                }
+            
+                public function testPut(array $data)
+                {
+                    dump('TestPut');
+                    dump($data);exit;
+                }
+            
+                public function testPatch(array $data)
+                {
+                    dump('TestPatch');
+                    dump($data);exit;
+                }
+            
+                public function testeOptions(array $data)
+                {
+                    dump('TestOptions');
+                    dump($data);exit;
+                }
+            
+                public function testDelete(array $data)
+                {
+                    dump('TestDelete');
+                    dump($data);exit;
+                }
+            
+                public function testGetPrefix(array $data)
+                {
+                    dump('TestGetPrefix');
+                    dump($data);exit;
+                }
+            } `
 
         
     Observation : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 
