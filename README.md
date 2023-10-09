@@ -132,5 +132,5 @@
     the resources of the library
     
     **Credits** :
-    This lib was inspired in this lib : https://github.com/robsonvleite/router
+    The lib was inspired in this other lib : https://github.com/robsonvleite/router
     
