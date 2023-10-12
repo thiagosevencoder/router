@@ -18,6 +18,9 @@ class ProcessData
         $this->prefix = $prefix;
     }
 
+    /**
+     * @return array
+     */
     public function requestProcessData(): array
     {
         switch ($this->httpMethod) {

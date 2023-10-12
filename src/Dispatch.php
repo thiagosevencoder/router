@@ -6,7 +6,7 @@ require_once('core/CoreLoader.php');
 
 spl_autoload_register('CoreLoader::loader');
 
-class Dispatch
+abstract class Dispatch
 {
     use Handler;
 
@@ -25,6 +25,9 @@ class Dispatch
         $this->httpMethod = $_SERVER['REQUEST_METHOD'];
     }
 
+    /**
+     * @return bool
+     */
     public function dispatch(): bool
     {
         if (empty($this->routes) || empty($this->routes[$this->httpMethod])) {
