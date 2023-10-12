@@ -1,15 +1,15 @@
-    **What's different about this Lib** :
-    This library has an implementation that allows you to configure a route without needing to specify a namespace. 
-    To do so, I implemented the SP Autoload feature that comes native in PHP. This way, you can define the Base Path 
-    for your controllers and proceed with route creation. The implementation of the custom autoload will take care of 
-    finding the controller class starting from the base path, considering the child folders.
-    
-    **Observation** : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 
-    be needed for other operating systems or web servers.
-    
-    **Examples** : In the library's installation folder, there are examples of .htaccess, controller, 
-    json of postman test examples, and an index file that will receive HTTP requests first and invoke 
-    the resources of the library
+**What's different about this Lib** :
+This library has an implementation that allows you to configure a route without needing to specify a namespace. 
+To do so, I implemented the SP Autoload feature that comes native in PHP. This way, you can define the Base Path 
+for your controllers and proceed with route creation. The implementation of the custom autoload will take care of 
+finding the controller class starting from the base path, considering the child folders.
+
+**Observation** : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 
+be needed for other operating systems or web servers.
+
+**Examples** : In the library's installation folder, there are examples of .htaccess, controller, 
+json of postman test examples, and an index file that will receive HTTP requests first and invoke 
+the resources of the library
    
 
 - To make it work on Apache, follow these steps:
