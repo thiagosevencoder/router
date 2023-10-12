@@ -44,7 +44,8 @@ the resources of the library
             
     5 - Example of file that receive http request, configure router and call dispatch :
     
-      ````
+      <pre>
+      ```php
       <?php
       
       require 'vendor/autoload.php';
@@ -79,3 +80,4 @@ the resources of the library
       
       $router->dispatch();
       ```
+      </pre>
