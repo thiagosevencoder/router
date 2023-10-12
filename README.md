@@ -63,74 +63,17 @@
             $router->get('2', 'HomeController@testGetPrefix');
             
             $router->dispatch();
-            
-     5 - Example Controller :
-            
-           <?php
-                      
-            class HomeController
-            {
-                public function __construct()
-                {
-                    echo "here in construct";
-                }
-            
-                public function helloWorld()
-                {
-                    echo "Hello World";
-                }
-            
-                public function testGet(array $data)
-                {
-                    dump('TestGet');
-                    dump($data);exit;
-                }
-            
-                public function testPost(array $data)
-                {
-                    dump('TestPost');
-                    dump($data);exit;
-                }
-            
-                public function testPut(array $data)
-                {
-                    dump('TestPut');
-                    dump($data);exit;
-                }
-            
-                public function testPatch(array $data)
-                {
-                    dump('TestPatch');
-                    dump($data);exit;
-                }
-            
-                public function testeOptions(array $data)
-                {
-                    dump('TestOptions');
-                    dump($data);exit;
-                }
-            
-                public function testDelete(array $data)
-                {
-                    dump('TestDelete');
-                    dump($data);exit;
-                }
-            
-                public function testGetPrefix(array $data)
-                {
-                    dump('TestGetPrefix');
-                    dump($data);exit;
-                }
-            } 
-            
-        
+    
+    **What's different about this Lib** :
+    This library has an implementation that allows you to configure a route without needing to specify a namespace. 
+    To do so, I implemented the SP Autoload feature that comes native in PHP. This way, you can define the Base Path 
+    for your controllers and proceed with route creation. The implementation of the custom autoload will take care of 
+    finding the controller class starting from the base path, considering the child folders.
+    
     **Observation** : These steps assume you are working on a Ubuntu system with Apache2. Adjustments might 
     be needed for other operating systems or web servers.
     
     **Examples** : In the library's installation folder, there are examples of .htaccess, controller, 
     json of postman test examples, and an index file that will receive HTTP requests first and invoke 
     the resources of the library
-    
-    **Credits** :
-    The lib was inspired in this other lib : https://github.com/robsonvleite/router
-    
+   
