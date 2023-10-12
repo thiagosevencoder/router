@@ -6,6 +6,12 @@ trait Handler
 {
     private array $routes = [];
 
+    /**
+     * @param string $method
+     * @param string $route
+     * @param string $handler
+     * @param string|null $name
+     */
     public function addRoute(string $method, string $route, string $handler, ?string $name): void
     {
         if ($route == '/') {
