@@ -39,7 +39,7 @@ trait Handler
         $this->routes[$method][$route] = $router();
     }
 
-    private function getController(string $handler) {
+    private function getController(string $handler): ?string {
         return (!is_string($handler) ? $handler : explode($this->separator, $handler)[0]);
     }
 
