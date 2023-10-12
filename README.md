@@ -34,14 +34,14 @@ the resources of the library
                 
     4 - Configure a .htaccess file in a folder where it affects the relevant files. The content of the 
     .htaccess file should be:
-    
-            RewriteEngine On
-            Options All -Indexes
-            
-            RewriteCond %{REQUEST_FILENAME} !-f
-            RewriteCond %{REQUEST_FILENAME} !-d
-            RewriteRule ^(.*)$ index.php?route=$1 [L,QSA] 
-            
+    ```apacheconfig
+        RewriteEngine On
+        Options All -Indexes
+        
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php?route=$1 [L,QSA] 
+    ```  
     5 - Example of file that receive http request, configure router and call dispatch :
 
 ```php
@@ -78,3 +78,4 @@ the resources of the library
       $router->get('2', 'HomeController@testGetPrefix');
       
       $router->dispatch();
+```
