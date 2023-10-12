@@ -44,36 +44,38 @@ the resources of the library
             
     5 - Example of file that receive http request, configure router and call dispatch :
     
-            <?php
-            
-            require 'vendor/autoload.php';
-            
-            use SevenCoder\Router\Router;
-            
-            /* this is the separator of class and method(of class controller) */
-            $separator = '@';
-            
-            /* this is project url, you can define it here or get it from elsewhere */
-            $projectUrl = 'http://localhost/router';
-            
-            $router = new Router($projectUrl, $separator);
-            
-            /* base directory that get controller */
-            $baseDir = __DIR__.'/App/Controller';
-            
-            /* set the base controller */
-            $router->setBasePath($baseDir);
-            
-            $router->get('/', 'HomeController@helloWorld');
-            $router->get('test/{teste}/{teste2}', 'HomeController@testGet');
-            $router->post('test-post', 'HomeController@testPost');
-            $router->put('test-put', 'HomeController@testPut');
-            $router->patch('test-patch', 'HomeController@testPatch');
-            $router->options('test-options', 'HomeController@testOptions');
-            $router->delete('test-delete', 'HomeController@testDelete');
-                        
-            $router->prefix('test-prefix');
-            $router->get('1/{param1}/{param2}', 'HomeController@testGestPrefix');
-            $router->get('2', 'HomeController@testGetPrefix');
-            
-            $router->dispatch();
+      ``
+      <?php
+      
+      require 'vendor/autoload.php';
+      
+      use SevenCoder\Router\Router;
+      
+      /* this is the separator of class and method(of class controller) */
+      $separator = '@';
+      
+      /* this is project url, you can define it here or get it from elsewhere */
+      $projectUrl = 'http://localhost/router';
+      
+      $router = new Router($projectUrl, $separator);
+      
+      /* base directory that get controller */
+      $baseDir = __DIR__.'/App/Controller';
+      
+      /* set the base controller */
+      $router->setBasePath($baseDir);
+      
+      $router->get('/', 'HomeController@helloWorld');
+      $router->get('test/{teste}/{teste2}', 'HomeController@testGet');
+      $router->post('test-post', 'HomeController@testPost');
+      $router->put('test-put', 'HomeController@testPut');
+      $router->patch('test-patch', 'HomeController@testPatch');
+      $router->options('test-options', 'HomeController@testOptions');
+      $router->delete('test-delete', 'HomeController@testDelete');
+      
+      $router->prefix('test-prefix');
+      $router->get('1/{param1}/{param2}', 'HomeController@testGestPrefix');
+      $router->get('2', 'HomeController@testGetPrefix');
+      
+      $router->dispatch();
+      ```
