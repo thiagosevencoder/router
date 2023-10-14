@@ -11,6 +11,12 @@ be needed for other operating systems or web servers.
 json of postman test examples, and an index file that will receive HTTP requests first and invoke 
 the resources of the library
 
+**Note about last version(v0.0.3): **
+In this version, a method was implemented to address the security of requests by filtering parameters 
+sent via POST using forms.
+Do not send parameters with the name or the following values, as they will be removed and sanitized to 
+prevent attacks: from, select, insert, delete, where, drop table, show tables, #, --.
+
 
 - To make it work on Apache, follow these steps:
 
