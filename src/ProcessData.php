@@ -51,8 +51,6 @@ class ProcessData
     {
         $dataRequest = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-        $dataRequest = $this->sanitizeDataRequest($dataRequest);
-
         if (empty($dataRequest)) {
            $dataRequest = $this->processHttpBody();
         }
@@ -64,7 +62,6 @@ class ProcessData
     private function processHttpBody(): array
     {
         $dataRequest = file_get_contents('php://input', false, null, 0, $_SERVER['CONTENT_LENGTH']);
-        $dataRequest = $this->sanitizeDataRequest($dataRequest);
         $dataRequest = json_decode($dataRequest, true);
 
         return $dataRequest;
@@ -86,13 +83,12 @@ class ProcessData
     private function sanitizeDataRequest( ?array $dataRequest): array {
         $datafiltered = [];
 
-        if ($dataRequest){
+        if ($dataRequest) {
 
             foreach ($dataRequest as $key => $data) {
-                $data[$key] = addslashes($data[$key]);
-                $data[$key] = Sanitize::tratyRequest($data[$key]);
-
-                $datafiltered = $data[$key];
+                $key = Sanitize::tratyRequest($key);
+                $data = Sanitize::tratyRequest($data);
+                $dataFiltered[$key] = $data;
             }
         }
 
