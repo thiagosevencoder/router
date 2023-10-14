@@ -8,11 +8,13 @@ class Sanitize
 
     public static function tratyRequest($data): void {
         self::$data = $data;
-        
+
         self::clearEmptySpaces();
         self::removeTagsPhpAndHtml();
         self::addBackslashesToString();
         self::removeComandSql();
+
+        return self::$data;
     }
     
     private static function clearEmptySpaces(): void {
