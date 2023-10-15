@@ -1,6 +1,6 @@
 {
   "name": "sevencoder/router",
-  "description": "Lib Router",
+  "description": "it is a simple Lib Router, that use spl autload to load class controllers",
   "type": "library",
   "authors": [
     {
